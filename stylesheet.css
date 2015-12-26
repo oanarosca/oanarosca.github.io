@@ -1,0 +1,107 @@
+body {
+  background-image: url("back.png");
+}
+
+.container, .header, .footer {
+  background-image: url("back2.png");
+  width: 800px;
+  margin: 0 auto;
+  -webkit-box-shadow: 10px 0 6px -10px #7d7c74, -10px 0 6px -10px #7d7c74;
+  -moz-box-shadow: 10px 0 6px -10px #7d7c74, -10px 0 6px -10px #7d7c74;
+  -ms-box-shadow: 10px 0 6px -10px #7d7c74, -6px 0 6px -4px #7d7c74;
+  -o-box-shadow: 10px 0 6px -10px #7d7c74, -10px 0 6px -10px #7d7c74;
+  box-shadow: 10px 0 6px -10px #7d7c74, -10px 0 6px -10px #7d7c74;
+  font-family: 'Roboto', Verdana;
+  color: #3f342c;
+  font-size: 17px;
+  text-align: justify;
+  padding: 30px;
+}
+
+.header {
+  margin-bottom: 20px;
+  height: 120px;
+}
+
+.footer {
+  margin-top: 20px;
+  height: 50px;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 52px;
+  font-family: 'Sansita One', cursive, Verdana;
+  color: #3f342c;
+  margin-top: 5px;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: 'Roboto', Verdana;
+  text-align: center;
+  color: #3f342c;
+  margin-top: -10px;
+}
+
+.footer p {
+  font-size: 18px;
+  font-family: 'Roboto', Verdana;
+  color: #3f342c;
+  line-height: 0.5;
+  text-align: center;
+}
+
+a {
+  color: #f8632f;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:active {
+  background: #f8632f;
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  float: right;
+}
+
+li {
+  padding: 8px;
+  background-image: url("back.png");
+  -webkit-transition: background-image 0.5s;
+  -moz-transition: background-image 0.5s;
+  -ms-transition: background-image 0.5s;
+  -o-transition: background-image 0.5s;
+  transition: background-image 0.5s;
+}
+
+li:hover {
+  background-image: url("back2.png");;
+}
+
+li a {
+  font-weight: none;
+  text-decoration: none;
+  color: #f8632f;
+}
+
+.titles {
+  font-family: 'Maven Pro', 'Roboto', Verdana;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 15px;
+}
+
+.code {
+  background-color: #333333;
+  color: #fffffa;
+}
+
+.dif {
+  background-image: url("back.png");
+}
