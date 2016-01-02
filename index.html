@@ -1,284 +1,32 @@
-<!DOCTYPE hmtl>
-<html lang="en" charset="utf-8">
+<DOCTYPE html>
+<html>
   <head>
     <link rel="stylesheet" href="stylesheet.css">
-    <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="header">
-      <h1>Getting started with Git</h1>
-      <h2>Project at <a href="http://fossasia.org" target="_blank">FOSSASIA</a> Google Code-In 2015</h2>
-    </div>
-    <div class="container">
-
-      <div class="table">
-        <ul style="font-size:18px;font-weight:bold">
-          Table of Contents
-          <li><a href="#whatis">What is git?</a></li>
-          <li><a href="#config">git config</a></li>
-          <li><a href="#init">git init</a></li>
-          <li><a href="#status">git status</a></li>
-          <li><a href="#add">git add</a></li>
-          <li><a href="#commit">git commit</a></li>
-          <li><a href="#log">git log</a></li>
-          <li><a href="#push">git push</a></li>
-          <li><a href="#branch">git branch</a></li>
-          <li><a href="#checkout">git checkout</a></li>
-          <li><a href="#rebase">git rebase</a></li>
-          <li><a href="#stash">git stash</a></li>
-          <li><a href="#reset">git reset</a></li>
-        </ul>
+    <div id="container">
+      <h1 id="greet">HELLO THERE! THANK YOU FOR PASSING BY!</h1>
+      <h2>PROJECT AT FOSSASIA GOOGLE CODE-IN 2015</h2> <!-- de pus link -->
+      <div class="card">
+        <h3>About me</h3>
+        <p>Lorem ipsum dolor sit amet and things like that</p>
       </div>
-
-      <h2 id="whatis" class="titles">What is Git?</h2>
-      <p>
-        Git is a distributed version control system. It's free, open source, and can handle various types of projects
-        fast and efficiently, allowing groups of people to work on the same documents together. Google, Facebook, Microsoft,
-        Twitter and Netflix are some of the many
-        companies that use Git. It's easy to learn and can be downloaded from <a href="https://git-scm.com/" target="_blank">here</a>.
-        Every Git working directory is a repository (there, Git begins version controlling your files) with history and
-        version-tracking capabilities.
-      </p>
-
-      <h2 id="config" class="titles">git config</h2>
-      <p>
-        Using the <code class="dif">git config</code> command, we can specify some Git settings. One important configuration we
-need to make is setting the name and the email address, for example:
-        <div class="code" style="width:75%"><pre><code>
-    $ git config --global user.name "Elena Iusco"
-    $ git config --global user.email elenaiusco@example.com
-        </code></pre></div>
-        Because we're using the <code class="dif">--global</code> option, Git will remember and use these informations for everything
-we'll be doing.
-      </p>
-
-      <h2 id="init" class="titles">git init</h2>
-      <p>
-        This command initializes a new repository, and it's usually the first one to be run, since most of the other Git
-        commands won't work outside a repository. If my current directory is C:/John/, the result would look like this:
-        <div class="code" style="width:75%"><pre><code>
-    $ git init
-    Initialized empty Git repository in C:/John/
-        </code></pre></div>
-        This allows it to start tracking changes of the project. Typing <code class="dif">git init directory</code> will create a repository in the
-        specified directory. Both will create a hidden .git directory, where the necessary data is contained.
-      </p>
-
-    <h2 id="status" class="titles">git status</h2>
-    <p>
-      The <code class="dif">git status</code> command will show you the state of both the working directory and the staging area
-      (the staging area is a file that stores information about what will go into your next commit). Basically, it tells us which files
-      are staged (ready to be commited), unstaged (not yet ready to be commited), and untracked (not yet tracked by Git). For example,
-      let's say that I've added a <code class="dif">cheese.txt</code> file to the working directory. After typing
-      <code class="dif">git status</code>, it would look something like this:
-      <div class="code" style="width:100%"><pre><code>
-    $ git status
-    # On branch master
-    #
-    # Initial commit
-    #
-    # Untracked files:
-    #   (use "git add <file>..." to include in what will be committed)
-    #
-    #	<span style="color:red">cheese.txt</span>
-    nothing added to commit but untracked files present (use "git add" to track)
-      </code></pre></div>
-      It is a good idea to run <code class="dif">git status</code> often.
-    </p>
-
-    <h2 id="add" class="titles">git add</h2>
-    <p>
-      A change is made in the working directory. <code class="dif">git add</code> adds that change to the staging area. Basically,
-it tells Git that you want to include the files' updates in the next commit. So, to tell Git to start tracking changes made to
-<code class="dif">cheese.txt</code>, we need to add it to the staging area using <code class="dif">git add</code>:
-      <div class="code"><pre><code>
-    $ git add cheese.txt
-    $ git status
-    # On branch master
-    #
-    # Initial commit
-    #
-    # Changes to be committed:
-    #   (use "git rm --cached <file>..." to unstage)
-    #
-    #	<span style="color: green">new file:   cheese.txt</span>
-    #
-      </code></pre></div>
-      Notice that it says <code class="dif">Changes to be committed</code>. This means that our file is in the staging area and
-ready to be committed! You can also use wildcards, for example <code class="dif">git add '*.txt'</code> will add all text
-files to the staging area.
-    </p>
-
-    <h2 id="commit" class="titles">git commit</h2>
-    <p>
-      To store the changes we've made so far in the repository, we run this command while also specifying what changes we have made.
-      <div class="code"><pre><code>
-    $ git commit -m "First commit! Yay!"
-    [master b00f045] First commit! Yay!
-      1 file changed, 10 insertions(+), 2 deletions(-)
-      </code></pre></div>
-      And so, the staged snapshot is commited. Unlike other version control systems, Git tracks the entire content of a file in
-each commit, not the differences between versions, making it much faster. After making a commit, we get a message telling us
-the number of changed files and the number of insertions and deletions made to the file(s).
-    </p>
-
-    <h2 id="log" class="titles">git log</h2>
-    <p>
-      The <code class="dif">git log</code> command shows us the committed snapshots, allowing us to see the project history. It
-works like a journal, remembering the changes we've committed. If we've made 2 commits, <code class="dif">git log</code> would
-display something similar to this:
-      <div class="code"><pre><code>
-    $ git log
-    <span style="color:yellow">commit 3852bbeb1634463d0bb4d267edb7b3f9cd02ace1</span>
-    Author: name < email >
-    Date:   Thu Dec 24 17:30:45 2015 +0200
-
-        Add all txt files
-
-    <span style="color:yellow">commit 104bedfd888cd3d5e7fcb857d0dabc5a0fcb5e28</span>
-    Author: name < email >
-    Date:   Thu Dec 24 12:53:16 2015 +0200
-
-        First commit! Yay!
-      </code></pre></div>
-      Use <code class="dif">git log --summary</code> for more information about each commit.
-    </p>
-
-    <h2 id="push" class="titles">git push</h2>
-    <p>
-      Using this command, we are able to make transfers from our local repository to a remote one. Its general form looks like
-this: <code class="dif">git push remote branch </code>.
-      <div class="code"><pre><code>
-    $ git push -u origin master
-    Branch master set up to track remote branch master from origin.
-      </code></pre></div>
-      In the example above we pushed the changes to the <code class="dif">origin</code> repository on <a href="http://github.com" target="_blank">
-GitHub</a>. The <code class="dif">-u</code> will make Git to remember those parameters, so the next time we can simply call
-<code class="dif">git push</code>.
-    </p>
-
-    <h2 id="branch" class="titles">git branch</h2>
-    <p>
-      A branch is an independent line of development. Using the <code class="dif">git branch</code> command, we can create, rename,
-delete or list branches, but pay attention, you can't switch between branches (that's <code class="dif">git checkout</code>'s
-job, see below). Branches are used by developers so that they could work on more than one task at the same time.
-      <div class="code"><pre><code>
-    $ git branch
-    * <span style="color: green">gh-pages</span>
-      master
-      </code></pre></div>
-      <code class="dif">git branch</code> lists all of the branches in the repository. <code class="dif">gh-pages</code> is the
-current branch.
-      <div class="code"><pre><code>
-    $ git branch name
-      </code></pre></div>
-      The above command creates a new branch.
-      <div class="code"><pre><code>
-    $ git branch -d name
-    Deleted branch name (was b10fd05).
-      </code></pre></div>
-      The above operation deletes that branch, altough Git prevents you from deleting it if it has unmerged changes. To force delete
-a branch, use <code class="dif">git branch -D name</code> instead.
-      <div class="code"><pre><code>
-    $ git branch -m name
-      </code></pre></div>
-      Lets you rename the current branch.
-    </p>
-
-    <h2 id="checkout" class="titles">git checkout</h2>
-    <p>
-      This command allows us to switch between branches (i.e between lines of development, between tasks).
-      <div class="code"><pre><code>
-    $ git checkout name
-    Switched to branch 'name'
-      </code></pre></div>
-      Once again, Git prevents you from switching to another branch before committing the changes made on the current one.
-      <div class="code"><pre><code>
-    $ git checkout -b name
-    Switched to a new branch 'name'
-      </code></pre></div>
-      Creates a new branch and switches to that branch. It is equivalent with running <code class="dif">git branch name</code>+
-<code class="dif">git checkout name</code>.
-      </br>
-      Using <code class="dif">git checkout -- name</code>, we are able to take the files back to their state at the last commit.
-    </p>
-
-    <h2 id="rebase" class="titles">git rebase</h2>
-    <p>
-      This command is used to combine, to merge changes from one branch to another branch. The following example moves the
-<code class="dif">gh-pages</code> branch to the tip of the <code class="dif">master</code>, and also includes the new commits in
-<code class="dif">master</code>. By using this command, we're getting a much cleaner project history, making it easier to navigate.
-      <div class="code"><pre><code>
-    $ git checkout gh-pages
-    $ git rebase master
-      </code></pre></div>
-    </p>
-
-    <h2 id="stash" class="titles">git stash</h2>
-    <p>
-      The <code class="dif">git stash</code> command is used when we are working on a part of a project and we want to switch
-branches to work on something else, but don't want to commit the messy work we've done. Stashing will take the messy state and
-place in on a stack, which we are able to access later. Take a look at the <a href="#status">git status</a> example. Changes are not
-committed, so we can't switch to another branch. After calling <code class="dif">git stash</code>, we will get something similar to this:
-      <div class="code"><pre><code>
-    $ git stash
-    Saved working directory and index state WIP on master: 5e95fb5 Add all txt files
-    HEAD is now at 5e75fb5 Add all txt files
-    $ git status
-    # On branch master
-    nothing to commit, working directory clean
-      </code></pre></div>
-      Notice that after using <code class="dif">git status</code>, everything's clean, so we can switch to another branch. Using
-<code class="dif">git stash list</code>, we can see all the stashes on the stack.
-    </p>
-
-    <h2 id="reset" class="titles">git reset</h2>
-    <p>
-      Using <code class="dif">git reset</code>, we can remove a number of commits from the current branch. It is a way to undo
-changes that are not yet shared with somebody else. The following command will make the last 3 commits be thrown away.
-      <div class="code"><pre><code>
-    $ git checkout gh-pages
-    $ git reset HEAD~3
-      </code></pre></div>
-      We can also choose between the 3 options of <code class="dif">git reset</code>: <code class="dif">git reset --mixed</code>
-is the default option, leaving the working directory unchanged, but bringing the staging area up to date to match the commit;
-<code class="dif">git reset --hard</code> will bring both the working directory and the staging area up to date to match the
-commit, whereas <code class="dif">git reset --soft</code> will leave both the working directory and the staging area unchanged.
-</br>
-      Typing in <code class="dif">git stash list</code> will show us the stack of stashes.
-      <div class="code"><pre><code>
-    $ git stash list
-    stash@{0}: WIP on master: 5e75fb5 message
-    stash@{1}: WIP on master: c24f051 message
-      </code></pre></div>
-      Use <code class="dif">git stash apply</code> to apply the most recent stash. You can also type in <code class="dif">
-git stash apply stash@{number}</code> to apply a specific stash.
-      <div class="code"><pre><code>
-    $ git stash apply
-    # On branch master
-    # Changes not staged for commit:
-    #   (use "git add <file>..." to update what will be committed)
-    #
-    #      <span style="color: red">modified:   cheese.txt</span>
-    #
-      </code></pre></div>
-      Let's commit one last time:
-      <div class="code"><pre><code>
-    $ git add cheese.txt
-    $ git commit -m "We're finished!"
-    [master b20a045] We're finished!
-      1 file changed, 6 insertions(+), 2 deletions(-)
-      </code></pre></div>
-    </p>
-
-      <p>Hooray! These are the basic functionalities of Git. Visit <a href="https://git-scm.com/">git-scm.com</a> to
-get it started, and also try <a href="https://github.com/">GitHub</a>, a Git repository hosting service. Happy coding!</p>
+      <div class="card">
+        <h3>About me</h3>
+        <p>Lorem ipsum dolor sit amet and things like that</p>
+      </div>
+      <div class="card">
+        <h3>About me</h3>
+        <p>Lorem ipsum dolor sit amet and things like that</p>
+      </div>
+      <div class="card">
+        <h3>About me</h3>
+        <p>Lorem ipsum dolor sit amet and things like that</p>
+      </div>
     </div>
-    <div class="footer">
-      <p>This project is part of FOSSASIA Google Code-In.</p>
-      <p> Click <a href="http://fossasia.org" target="_blank">here</a> to visit fossasia.org.</p>
-    </div>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+    <script type='text/javascript' src='actions.js'></script>
   </body>
 </html>
