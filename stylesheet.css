@@ -1,40 +1,32 @@
 body {
-  background-image: url("back.png");
+  background: url("background.png");
 }
 
-#container {
+.container {
   width: 80%;
   margin: 0 auto;
 }
 
-#greet {
-  text-align: center;
-  font-size: 70px;
-  color: white;
-  font-family: 'Arvo', 'Roboto', Helvetica, Arial;
-  text-shadow: 3px 3px black;
-  margin-top: 230px;
+.big {
+  width: 100%;
 }
 
-h2 {
-  font-size: 30px;
-  color: white;
-  font-family: 'Roboto', Helvetica, Arial;
+h1 {
   text-align: center;
-  text-shadow: 1px 1px black;
   margin-top: -30px;
-  margin-bottom: 300px;
+  font-family: 'Coming Soon';
+  font-size: 45px;
+  color: rgb(24, 24, 24);
 }
 
-.card {
-  background-image: url(back_card.png);
-  -webkit-box-shadow: 10px 0 6px -10px #000000, -10px 0 6px -10px #000000;
-  -moz-box-shadow: 10px 0 6px -10px #000000, -10px 0 6px -10px #000000;
-  -ms-box-shadow: 10px 0 6px -10px #000000, -6px 0 6px -4px #000000;
-  -o-box-shadow: 10px 0 6px -10px #000000, -10px 0 6px -10px #000000;
-  box-shadow: 10px 0 6px -10px #000000, -10px 0 6px -10px #000000;
-  padding: 15px;
-  font-family: 'Roboto', Helvetica, Arial;
-  color: #3f342c;
-  margin: 20px;
+h1 ~ p {
+  margin-top: -30px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Roboto Slab';
+  font-size: 25px;
+  color: rgb(106, 106, 106);
 }
