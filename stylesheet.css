@@ -3,30 +3,48 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 
 .big {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
 }
 
 h1 {
   text-align: center;
   margin-top: -30px;
   font-family: 'Coming Soon';
-  font-size: 45px;
-  color: rgb(24, 24, 24);
+  font-size: 2.6em;
+  color: #181818;
 }
 
 h1 ~ p {
+  font-size: 1.6em;
   margin-top: -30px;
-  margin-left: 5px;
+  margin-left: 15px;
   text-align: center;
 }
 
 p {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Mono', monospace;
   font-size: 25px;
-  color: rgb(106, 106, 106);
+  color: #6a6a6a;
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: 100%;
+  }
+  .big {
+    width: 100%;
+  }
+}
+
+.end {
+  font-size: 1em;
+  margin: 0 auto;
+  bottom: 0;
 }
