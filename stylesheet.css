@@ -68,6 +68,22 @@ a {
   text-decoration: none;
 }
 
+.pics {
+  padding: 0;
+}
+
+.pics li {
+  display: inline;
+  text-decoration: none;
+}
+
+.small {
+  display: inline;
+  width: 15%;
+  margin-right: 25px;
+  border-radius: 10px;
+}
+
 @media (max-width: 1080px) {
   .container {
     width: 90%;
