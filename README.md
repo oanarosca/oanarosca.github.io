@@ -1,6 +1,6 @@
 # Personal page
 
 Work in progress :construction:. Access [here](https://oanarosca.github.io).
-- [ ] About
+- [x] About
 - [ ] Projects
 - [x] Contact
