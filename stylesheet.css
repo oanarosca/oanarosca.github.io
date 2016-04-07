@@ -84,8 +84,10 @@ a {
   border-radius: 10px;
 }
 
-.test {
-  border: 1px solid red;
+#display {
+  margin: 0;
+  font-size: 0.90em;
+  text-align: left;
 }
 
 @media (max-width: 1080px) {
